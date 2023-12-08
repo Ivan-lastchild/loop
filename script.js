@@ -3,16 +3,20 @@
     let userConfirmed = confirm("Tell me three most important words 💚");
     
     if (!userConfirmed) {
+        // якщо користувач відмовився
       return;
     }
   
     let words = [];
+    //цикл фор з трьома ітераціями
     for (let i = 0; i < 3; i++) {
       do {
+        //цикл на перевірку валідності введених слів
         word = getUserInput();
       } while (!isValidWord(word));
 
       do {
+        // цикл для форматування слів
         format = prompt("Choose formatting for the word:\n- uppercase\n- lowercase\n- capitalize");
       } while (format !== "uppercase" && format !== "lowercase" && format !== "capitalize");
 
